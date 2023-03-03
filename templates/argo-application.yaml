@@ -13,7 +13,7 @@ kind: Application
 metadata:
   finalizers:
   - resources-finalizer.argocd.argoproj.io
-{{- if or (eq $release "ci-cd") (eq $release "cluster-ops") (eq $release "pm") }}
+{{- if or (eq $release "infra") (eq $release "ci-cd") (eq $release "cluster-ops") (eq $release "pm") }}
   name: {{ .name }}
 {{- else }}
   name: {{ $release }}-{{ .name }}

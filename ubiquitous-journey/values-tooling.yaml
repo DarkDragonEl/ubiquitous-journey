@@ -49,19 +49,6 @@ applications:
           bindings: *binds
           operatorgroup: false
 
-  # Jenkins
-  - name: jenkins
-    enabled: true
-    source: https://github.com/redhat-cop/helm-charts.git
-    source_path: charts/jenkins
-    source_ref: "jenkins-1.0.7"
-    values:
-      persistence: false
-      source_secrets:
-        - name: nexus-password
-          username: admin
-          password: admin123
-
   # Nexus
   - name: nexus
     enabled: true
@@ -132,7 +119,7 @@ applications:
 
   # CodeReady Workspaces
   - name: crw
-    enabled: true
+    enabled: false
     destination: crw
     source: https://github.com/rht-labs/refactored-adventure
     source_path: crw/base
@@ -142,7 +129,7 @@ applications:
 
   # Zalenium
   - name: zalenium
-    enabled: true
+    enabled: false
     source: https://github.com/zalando/zalenium.git
     source_path: charts/zalenium
     source_ref: "master"
