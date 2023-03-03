@@ -5,16 +5,16 @@ ignoreHelmHooks: false
 namespaces:
  - labs-ci-cd
 
-# example
+# adding your secrets for git access or other repository credentials
 secrets:
   - name: git-auth
-    username: 'user'
-    password: 'pass1234'
+    username: 'DarkDragonEl'
+    password: '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'
     sshPrivateKey: ''
 
 argocd_cr:
   repositoryCredentials: |
-    - url: https://gitlab-ce.apps.openshift-498-bd8hw.do500.redhatlabs.dev
+    - url: https://github.com/DarkDragonEl/gitops-infra
       type: git
       passwordSecret:
         key: password
