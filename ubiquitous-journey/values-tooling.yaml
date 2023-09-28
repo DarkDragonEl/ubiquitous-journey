@@ -162,7 +162,6 @@ applications:
         accessmode: ReadWriteOnce
         service:
           port: 5432
-          database: *name
           type: ClusterIP
         image:
           tag: "10-el8"
