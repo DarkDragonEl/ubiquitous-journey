@@ -158,6 +158,17 @@ applications:
     source: https://redhat-cop.github.io/helm-charts
     source_ref: "0.0.9"
     values:
+      postgresql:
+        accessmode: ReadWriteOnce
+        service:
+          port: 5432
+          database: *name
+          type: ClusterIP
+        image:
+          tag: "10-el8"
+        persistent:
+          volume:
+            size: "5Gi"
       # update the passwords :)
  
    # Hoverfly
